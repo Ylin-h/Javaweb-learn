@@ -1,0 +1,25 @@
+1、code spell checker//代码补全
+
+2、HTML CSS support//HTML CSS 支持
+
+3、JavaScript (ES6) code snippets//JavaScript (ES6) 代码片段
+
+4、Mithril Emmet support//代码快速编写工具
+
+5、Vue3 Snippets//Vue3 代码片段
+
+6、Vue Helper//vue enhance，extension for Element-UI, VUX, IVIEW
+
+7、auto close tag//自动闭合标签
+
+8、auto rename tag//自动重命名标签
+
+9、Bracket Pair Colorizer//括号配色
+
+10、open in browser//在浏览器中打开
+
+11、Vetur//Vue tooling 
+
+12、path intellisense//路径自动提示
+
+13、etc
