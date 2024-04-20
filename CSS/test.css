@@ -1,0 +1,11 @@
+h1{
+    color:red;
+    font-size:24px;
+    text-align:center;
+}
+/* 用css更改超链接样式 */
+a:hover{
+    color:blue;
+    text-decoration:none;
+    background-color: aqua;
+}
