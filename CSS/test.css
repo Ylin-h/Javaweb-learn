@@ -13,7 +13,7 @@ div{
     font-size: 56px;
     text-align: center;
     width: 65% ;
-    background-color: lightblue;
+    background-image: url(../img/1.jpg);
     padding: 20px;/*内边距*/
     border: 1px solid black;/*边框*/
     margin: 0 auto;/*外边距 顺序：上。右 下 左，顺时针方向  ，margin: 0% auto;表示水平居中，垂直居中 ，上下对应，左右对应，设置了一个方向对应方向一样*/

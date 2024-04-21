@@ -15,9 +15,13 @@
             text-align:left;   /*文本对齐方式 */
         }
     </style>
-       
- 
-  
+  <!-- js脚本是面向对象的解释语言，在HTML文件中可以多次并能出现在其任意位置，多数写在body标签里 -->
+ <!-- 内部引入js脚本 -->
+ <!-- <script>
+    alert("hello");
+ </script> -->
+  <!-- 外部引入js脚本 -->
+  <script src="../JS/test.js"></script>
 </head>
 <!-- 无实际意义的div标签，和span一样，div一行一个，而span可以一行多个 -->
 <div><b>hello</b></div>
@@ -40,15 +44,16 @@ class选择器 .class
    <p class="test">2</p> 
  <!-- a标签  href:链接地址 target:链接打开方式,_blank为新窗口打开 _self为当前窗口打开 -->
    <h4> <a href="https://www.bing.com" target="_blank">website</a></h4> 
-   <hr>
    <!-- 空格标签 -->
     &nbsp;&nbsp;
     <!-- span标签无实际意义，只是用来包裹文字，可以设置样式 -->
+    <hr>
    <span>音频</span>
    <audio src="https://cdn5.lizhi.fm/audio/2017/06/27/2609841351031777286_hd.mp3" controls="controls"></audio>
 <!-- 换行标签 -->
    <br>
    <br>
+   <hr>
    <!-- <p></p><strong></strong>标签加粗，强调 -->
    <span><p>视频</p></span>
    <!-- 定义video宽度width，高度height，以及控制按钮的显示或隐藏 -->
@@ -62,6 +67,7 @@ class选择器 .class
     <tr><td>2</td><td>Jerry</td><td>25</td></tr>
     <tr><td>3</td><td>Lily</td><td>30</td></tr>
    </table>
+   <hr>
    <br>
    <!-- <form action=""></form> 表单标签  action:提交地址 method:提交方式，get或post -->
    <form action="" method="post">
@@ -74,6 +80,7 @@ class选择器 .class
     <input type="submit" value="Submit">
     <input type="reset" value="Reset">
     <input type="file" name="file">
+    <hr>
     <br>
     <br>
     <!-- 下拉表单  -->
@@ -82,18 +89,21 @@ class选择器 .class
         <option value="2">option2</option>
         <option value="3">option3</option>
     </select>
+    <hr>
     <br>
     <br>
     <!-- 多选框 label标签包裹input标签，设置for属性为input标签的id属性，点击label标签都能够选中对应的input标签 -->
     <label ><input type='checkbox' name='checkbox' value='1'>1</label>
    <label> <input type='checkbox' name='checkbox' value='2'>2</label>
    <label > <input type='checkbox' name='checkbox' value='3'>3</label>
+   <hr>
    <br>
    <br>
    <!-- 单选框 -->
   <label> <input type='radio' name='radio' value='1'>radio1</label>
 <label><input type='radio' name='radio' value='2'>radio2</label>
    </form>
+<hr>
 
 </body>
 </html>
