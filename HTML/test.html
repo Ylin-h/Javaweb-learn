@@ -50,7 +50,47 @@ class选择器 .class
    <!-- <p></p><strong></strong>标签加粗，强调 -->
    <span><p>视频</p></span>
    <!-- 定义video宽度width，高度height，以及控制按钮的显示或隐藏 -->
-   <video src="blob:https://43.240.156.118:8443/c92a2a95-4332-4968-bf9e-09489f925b97" controls="controls" width="320px" height="240px"></video>
+   <video src="../video/十字路.mp4" controls="controls" width="320px" height="240px"></video>
    <hr>
+   <!-- 定义table表格，并设置边框边距 cellpadding cellspacing border -->
+   <table border="1" cellpadding="10" cellspacing="0">
+    <!-- <tr></tr>定义表格行，<th></th>定义表头，<td></td>定义单元格 -->
+    <tr><th>id</th><th>name</th>  <th>age</th>  </tr>
+    <tr><td>1</td><td>Tom</td><td>20</td></tr>
+    <tr><td>2</td><td>Jerry</td><td>25</td></tr>
+    <tr><td>3</td><td>Lily</td><td>30</td></tr>
+   </table>
+   <br>
+   <!-- <form action=""></form> 表单标签  action:提交地址 method:提交方式，get或post -->
+   <form action="" method="post">
+    <!-- <label></label>定义标签，<input></input>定义输入框 -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br>
+    <label for="age">Age:</label>
+    <input type="text" id="age" name="age"><br>
+    <!-- <input type="submit" value="提交">定义提交按钮  type类型checkbox(多选框) radio（单选框） text password submit reset button file -->
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+    <input type="file" name="file">
+    <br>
+    <br>
+    <!-- 下拉表单  -->
+    <select name="select"> id="">
+        <option value="1">option1</option>
+        <option value="2">option2</option>
+        <option value="3">option3</option>
+    </select>
+    <br>
+    <br>
+    <!-- 多选框 label标签包裹input标签，设置for属性为input标签的id属性，点击label标签都能够选中对应的input标签 -->
+    <label ><input type='checkbox' name='checkbox' value='1'>2</label>
+   <label> <input type='checkbox' name='checkbox' value='2'>1</label>
+   <label > <input type='checkbox' name='checkbox' value='3'>3</label>
+   <br>
+   <br>
+   <!-- 单选框 -->
+  <label> <input type='radio' name='radio' value='1'>radio1</label>
+<label><input type='radio' name='radio' value='2'>radio2</label>
+   </form>
 </body>
 </html>
