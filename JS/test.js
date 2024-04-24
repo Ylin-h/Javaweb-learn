@@ -104,3 +104,12 @@ var person = {
 };
 console.log(person.name);//输出name属性值
 person.name = "Mike";//修改name属性值
+//json对象,比js对象在key值上要加上双引号,同时在花括号外面还要加上一层引号包裹起来
+{
+    var human = '{"name":"John", "age":30, "city":"New York"}';
+}
+//调用parse()方法将json字符串转换为js对象
+const obj = JSON.parse(human);
+console.log(obj.name);//输出name属性值
+//调用stringify()方法将js对象转换为json字符串
+console.log(JSON.stringify(person));//输出json字符串
