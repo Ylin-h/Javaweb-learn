@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 使用VUE框架要先引入Vue.js文件 -->
+    <script src="../JS/Vue/vue.js"></script>
+</head>
+<body >
+    <!-- //vue基于JavaScript的前端框架 -->
+    <!-- v-bind 指令，绑定 href 等属性-->
+    <div id="link">
+    <a  v-bind:href="url">链接1</a>
+    <br>
+    <!-- 可以省略v-bind -->
+   <a  :href="url">链接2</a>
+   <br>
+   更改跳转转链接<input type="text" v-model="url">
+</div>
+    <!-- v-model指令，双向数据绑定  -->
+    <br>
+    <div  id="app">
+        双向数据绑定
+        <input type="text" v-model="message">
+        <p>{{ message }}</p> <!-- //{{}}插值表达式 -->
+    </div>
+  <br>
+  <!-- v-on指令，绑定事件 如click  -->
+  <div id="event">
+  <input type="button" value="点我" v-on:click="change">
+  <br>
+  <!-- 简写 使用@替换v-on -->
+  <input type="button" value="点我1" @click="change">
+</div>
+<div id="judge">
+    <!-- v-if,v-else-if,v-else判断条件为true渲染，反之否 -->
+    年龄<input type="text" v-model="age">岁为
+    <span v-if="age<=18">青年人</span>
+    <span v-else-if="age<=30">中年人</span>
+    <span v-else>老年人</span>
+    <br>
+    <!-- 通过v-show指令，可以实现条件渲染，通过控制元素的display属性实现，当条件不成立时，元素仍然存在，只是不显示。 -->
+    年龄<input type="text" v-model="age">岁
+    <span v-show="age<=3">是婴儿</span>
+    <span v-show="age>3">不是婴儿</span>
+</div>
+<!-- 通过v-for指令，可以渲染数组元素 -->
+<div id="list">
+ <div   v-for="(lt,index) in list" ><!--不要下表index可以写成lt in list -->
+    {{ index+1 }}.{{ lt }}
+</div>
+</div>
+<!-- Vue八个生命周期钩子函数 -->
+<!-- Vue实例的生命周期钩子函数，可以对Vue实例的创建、更新、销毁等过程进行监听和控制 -->
+<!-- 1.beforeCreate() -->
+<!-- 2.created() -->
+<!-- 3.beforeMount() 载入前-->    
+<!-- 4.mounted()  Vue初始化完成后，挂载到DOM上 （发送请求到服务端，加载数据-->
+<!-- 5.beforeUpdate() -->
+<!-- 6.updated() -->
+<!-- 7.beforeDestroy() -->
+<!-- 8.destroyed() -->
+</body>
+<script>
+new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello Vue.js!'
+    }
+})
+new Vue({
+  el: '#link',
+  data: {
+    url: "https://www.bing.com"
+  },
+  mounted()
+  {
+    alert("Vue挂载完成")
+  }
+})
+new Vue({
+  el: '#event',//view视图层
+  data:{
+
+  },
+  methods: {
+    change: function() {
+      alert("点我了")
+    }
+  }
+})
+new Vue(
+    {
+        el:'#judge',
+        data:{
+            age:19
+        },
+        methods:{
+
+        }
+    }
+)
+new Vue({
+  el: '#list',
+  data: {
+    list: ['apple', 'banana', 'orange']
+  }
+})
+</script>
+</html>
