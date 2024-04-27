@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../JS/Vue/vue.js"></script>
+    <!-- //引入axios库 ,axios基于Ajax，但不同于Ajax，他能更好的适用于各个浏览器，并且提供了更加便捷的API接口 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <input type="button" value="Get Data" onclick="getData()" />
+  <br>data:
+  <div id="result"></div>
+  <div id="table">
+      <table  cellspacing="0" cellpadding="0" border="1" bordercolor="#f00" >
+    <tr><th>Index</th>
+    <th>Data</th></tr>
+    <tr v-for="(item, index) in tableData" :key="index">
+        <td>{{index+1}}</td>
+        <td>{{tableData[index].title}}</td>
+    </tr>
+      </table>
+  </div>
+  通过使用axios异步请求数据<div id="result1">
+    <input type="button" value="请求数据" onclick="getData1()" />
+  </div>
+</body>
+    <!-- ajax是异步js和xml的缩写，它可以实现异步请求，为javascript提供了一种在不刷新页面的情况下更新页面的能力。 -->
+    <script>
+        function getData() {
+        var xhr = new XMLHttpRequest();//new XMLHttpRequest()创建XMLHttpRequest对象
+        xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos/1');//使用get方法异步请求数据，其中请求方法还有post等
+        xhr.send();//发送请求
+        // 服务器响应成功后，执行回调函数
+        xhr.onload = function() {
+            if (xhr.status === 200&&xhr.readyState === 4) {
+                var response = JSON.parse(xhr.responseText);
+                document.getElementById('result').innerHTML = response.title;
+                console.log(response);
+            }
+        };
+      
+    }
+    new Vue({
+        el: '#table',
+        data: {
+            tableData: []
+        },
+        mounted() {
+            this.getData();
+        },
+        methods: {
+            getData() {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos');
+                xhr.send();
+                xhr.onload = function() {
+                    if (xhr.status === 200&&xhr.readyState === 4) {//status为200表示请求成功，readyState为4表示响应完成
+                        var response = JSON.parse(xhr.responseText);
+                        this.tableData = response;//this.tableData = response将服务器响应的数据赋值给tableData，并刷新页面
+                        console.log(response);
+                    }
+                }.bind(this);
+            }
+        }
+    });
+      function getData1() {//通过axios.get()方法异步请求数据
+        axios.get('https://jsonplaceholder.typicode.com/todos/1')//同于{method: 'get', url: 'https://jsonplaceholder.typicode.com/todos/1'}
+           .then( function(response){//还可以写成.then((response) => {函数代码})
+                console.log(response.data);
+                document.getElementById('result1').innerHTML = response.data.title;
+            })
+        }
+    </script>
+
+</html>
