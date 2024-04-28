@@ -8,4 +8,4 @@
 下载webpack，输入npm install webpack -g，下载webpack-cli，输入npm install webpack-cli -g，下载webpack-dev-server，输入npm install webpack-dev-server -g,下载vue-router，输入npm install vue-router -g
 7. 打开cmd，输入vue create my-project，创建vue项目，会自动安装依赖包，等待安装完成即可
 8. 输入cd my-project，进入项目目录，输入npm run serve，启动项目，浏览器打开http://localhost:8080，即可看到vue项目的欢迎页面
-注：cmd或者powershell都要以管理员身份运行，否则会出现权限问题
+注：cmd或者powershell都要以管理员身份运行，否则会出现权限问题,在安装nodejs时，可以选择安装选项，勾选Add to PATH，这样在cmd中就可以直接输入npm命令了
