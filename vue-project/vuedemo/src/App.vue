@@ -5,9 +5,20 @@
       <router-link to="/about">About</router-link>
     </nav>
     <router-view/>
-  </div>
-</template>
+   <ElementView></ElementView><!--显示element组件-->
 
+  </div>
+
+</template>
+<script>
+import ElementView from './views/element/ElementView.vue'//导入element组件
+export default {
+  name: 'App',
+  components: {
+    ElementView
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
